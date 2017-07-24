@@ -133,11 +133,20 @@ int main(int argc, char *argv[]) {
 	int vhor;
 
 	// Virtual parameters
-	const float focal = 704.7082f;
-	const float baseline = 0.8f;
-	const float camera_center_y = 384.0f;
+	// const float focal = 704.7082f;
+	const float focal = 721.5377f;			// in pixels
+	// const float baseline = 0.8f;
+	const float baseline = 0.54f;   		// in meters
+	const float camera_center_y = 384.0f;	// for 1024x768 image
+	// const float camera_center_y = 240.0f;	// for 1280x480 image
+	// const float camera_center_y = 162.5f;	// for 1242x375 image (original)
 	const int column_step = 5;
 	const int width_margin = 0;
+
+	// const float focal = 704.7082f;
+	// const float baseline = 0.8f; // seems to be in meters
+	// const float camera_center_y = 384.0f;
+
 
 	float camera_tilt;
 	const float sigma_camera_tilt = 0.05f;
@@ -177,7 +186,8 @@ int main(int argc, char *argv[]) {
 				cv::cvtColor(dis, dis, CV_RGB2GRAY);
 			}
 
-			std::cout << ep->d_name << std::endl;
+			// std::cout << ep->d_name << std::endl;
+			std::cout << "#-#-#-#-#-#- " << ep->d_name << " -#-#-#-#-#-#" << std::endl;
 
 			const int rows = dis.rows;
 			const int cols = dis.cols;

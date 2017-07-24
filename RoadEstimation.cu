@@ -137,6 +137,8 @@ void RoadEstimation::ComputeCameraProperties(cv::Mat vDisp, const float rho, con
 {
 	// Compute Horizon Line (2D)
 	horizonPoint = rho/sinf(theta);
+	// horizonPoint = 162.5f;
+	horizonPoint = 384.0f;
 
 	// Compute pitch -> arctan((cy - y0Hough)/focal) It is negative because y axis is inverted
 	pitch = -atanf((m_cy - horizonPoint)/(m_focal));
@@ -147,6 +149,7 @@ void RoadEstimation::ComputeCameraProperties(cv::Mat vDisp, const float rho, con
 	slope = (0 - vDispDown)/(horizonPoint - last_row);
 
 	// Compute the camera height -> baseline*cos(pitch)/slopeHough
-	cameraHeight = m_b*cosf(pitch)/slope;
+	// cameraHeight = m_b*cosf(pitch)/slope;
+	cameraHeight = 1.65f;
 }
 

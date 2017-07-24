@@ -17,7 +17,7 @@
 
 cmake_minimum_required(VERSION 2.4)
 project(stixels)
-find_package( OpenCV REQUIRED )
+find_package( OpenCV 2.4.13 REQUIRED )
 find_package( CUDA REQUIRED )
 
 set(
@@ -28,6 +28,7 @@ set(
     -gencode=arch=compute_35,code=sm_35
     -gencode=arch=compute_50,code=sm_50
     -gencode=arch=compute_52,code=sm_52
+    -gencode=arch=compute_60,code=sm_60
     )
 
 cuda_add_executable(
