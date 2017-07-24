@@ -137,9 +137,10 @@ void RoadEstimation::ComputeCameraProperties(cv::Mat vDisp, const float rho, con
 {
 	// Compute Horizon Line (2D)
 	horizonPoint = rho/sinf(theta);
-	// horizonPoint = 162.5f;
-	horizonPoint = 384.0f;
-
+	// horizonPoint = 384.0f;	// for 1024x768 image
+	// horizonPoint = 240.0f;	// for 1280x480 image
+	horizonPoint = 162.5f;	// for 1242x375 image (original)
+	
 	// Compute pitch -> arctan((cy - y0Hough)/focal) It is negative because y axis is inverted
 	pitch = -atanf((m_cy - horizonPoint)/(m_focal));
 

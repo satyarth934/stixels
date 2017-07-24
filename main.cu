@@ -137,9 +137,9 @@ int main(int argc, char *argv[]) {
 	const float focal = 721.5377f;			// in pixels
 	// const float baseline = 0.8f;
 	const float baseline = 0.54f;   		// in meters
-	const float camera_center_y = 384.0f;	// for 1024x768 image
+	// const float camera_center_y = 384.0f;	// for 1024x768 image
 	// const float camera_center_y = 240.0f;	// for 1280x480 image
-	// const float camera_center_y = 162.5f;	// for 1242x375 image (original)
+	const float camera_center_y = 162.5f;	// for 1242x375 image (original)
 	const int column_step = 5;
 	const int width_margin = 0;
 
